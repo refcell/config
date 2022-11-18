@@ -1,0 +1,16 @@
+/* Place in /etc/systemd/system/ */
+
+[Unit]
+Description=Prysm: An Ethereum Consensus Implementation written in go
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=5s
+User=validator
+ExecStart=/data/consensus/prysm/prysm.sh beacon-chain --execution-endpoint=http://127.0.0.1:8551 --prater --jwt-secret=/data/consensus/prysm/jwt.hex --genesis-state=/data/consensus/prysm/genesis.ssz --suggested-fee-recipient=0x67eC90d8adc19933aFf5140eA45d4cc111150c6A
+
+[Install]
+WantedBy=multi-user.target
+
+
