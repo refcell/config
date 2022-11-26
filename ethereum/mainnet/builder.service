@@ -7,7 +7,7 @@ Description=Block Builder Based off Flashbots
 Type=simple
 User=validator
 Restart=always
-ExecStart=/usr/local/bin/builder --builder.secret_key $BUILDER_SECRET_KEY --config /ethereum/builder.toml
+ExecStart=/usr/local/bin/builder --builder --builder.secret_key $BUILDER_SECRET_KEY --config /data/ethereum/builder.toml
 
 [Install]
 WantedBy=default.target

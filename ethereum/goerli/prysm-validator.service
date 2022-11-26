@@ -1,0 +1,17 @@
+[Unit]
+Description=Prysm Validator
+Wants=prysm-beacon.service
+After=prysm-beacon.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=5
+User=validator
+ExecStart=/data/consensus/prysm/prysm.sh validator --goerli --web --rpc --grpc-gateway-host 0.0.0.0 --monitoring-host 0.0.0.0 --datadir /data/ethereum/validator --enable-tracing --graffiti "highbyte.eth" --wallet-dir /data/ethereum/validator_keys --wallet-password-file /data/ethereum/wallet.txt --accept-terms-of-use --suggested-fee-recipient 0x67eC90d8adc19933aFf5140eA45d4cc111150c6A
+
+# --enable-builder
+
+[Install]
+WantedBy=multi-user.target

@@ -4,7 +4,7 @@
 
 [Eth]
 NetworkId = 5 # 5 = Goerli
-SyncMode = "fast"
+SyncMode = "snap"
 NoPruning = false
 NoPrefetch = false
 LightPeers = 100
@@ -17,21 +17,20 @@ EnablePreimageRecording = false
 EWASMInterpreter = ""
 EVMInterpreter = ""
 
-[Builder]
-BuilderEnabled = true # (default: false)
-BuilderEnableValidatorChecks = false # (default: false)
-BuilderEnableLocalRelay = false # (default: false)
-BuilderDisableBundleFetcher = false # (default: false)
-BuilderDryRun = false # (default: false)
-BuilderSecretKey = "" # (default: "0x2fc12ae741f29701f8e30f5de6350766c020cb80768a0ff01e6838ffd2431e11")
-BuilderRelaySecretKey = "" # (no default)
-BuilderListenAddr = ":28545" # (default: ":28545") 
-BuilderGenesisForkVersion = "0x00000000" # (default: "0x00000000") 
-BuilderBellatrixForkVersion = 0x02000000 # (default: "0x02000000")
-BuilderGenesisValidatorsRoot = "0x0000000000000000000000000000000000000000000000000000000000000000" # (default: "0x0000000000000000000000000000000000000000000000000000000000000000")
-BuilderBeaconEndpoint = "http://0.0.0.0:5052" # (default: "http://127.0.0.1:5052")
-BuilderRemoteRelayEndpoint = "" # (no default)
-BuilderBlockValidationBlacklistSourceFilePath = "" # (no-default)
+# [Builder]
+# Enabled = true # (default: false)
+# EnableValidatorChecks = false # (default: false)
+# EnableLocalRelay = false # (default: false)
+# DisableBundleFetcher = false # (default: false)
+# DryRun = false # (default: false)
+# RelaySecretKey = "" # (no default)
+# ListenAddr = ":28545" # (default: ":28545") 
+# GenesisForkVersion = "0x00000000" # (default: "0x00000000")
+# BellatrixForkVersion = "0x02000000" # (default: "0x02000000")
+# GenesisValidatorsRoot = "0x0000000000000000000000000000000000000000000000000000000000000000" # (default: "0x0000000000000000000000000000000000000000000000000000000000000000")
+# BeaconEndpoint = "http://0.0.0.0:5052" # (default: "http://127.0.0.1:5052")
+# RemoteRelayEndpoint = "" # (no default)
+# BlockValidationBlacklistSourceFilePath = "" # (no-default)
  
 [Eth.Ethash]
 CacheDir = "ethash"
@@ -62,7 +61,7 @@ NoLocals = false
 [Node]
 DataDir = "/data/ethereum"
 JWTSecret = "/data/consensus/prysm/jwt.hex"
-omitempty = ""
+# omitempty = ""
 IPCPath = "geth.ipc"
 HTTPPort = 8545
 HTTPVirtualHosts = [ "0.0.0.0" ]
