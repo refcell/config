@@ -1,0 +1,15 @@
+[Unit]
+Description=Block Builder Based off Flashbots
+
+[Service]
+Type=simple
+User=octane
+Restart=always
+ExecStart=/builder/builder/build/builder --builder --builder.secret_key $BUILDER_SECRET_KEY --http --http.addr 0.0.0.0 --http.api "eth,web3,txpool,net,debug,engine,admin" --authrpc.vhosts="*" --ws --ws.addr 0.0.0.0 --datadir /builder/data --authrpc.jwtsecret /builder/prysm/jwt.hex
+
+# TODO: wait for https://github.com/flashbots/builder/pull/2 to use builder.toml config file
+# ExecStart=/usr/local/bin/builder --builder --builder.secret_key $BUILDER_SECRET_KEY --config /builder/builder.toml
+
+[Install]
+WantedBy=default.target
+

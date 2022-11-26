@@ -1,0 +1,15 @@
+[Unit]
+Description=Prysm Validator
+Wants=prysm-beacon-prod.service
+After=prysm-beacon-prod.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=5
+User=validator
+ExecStart=/builder/prysm/prysm.sh validator --enable-builder --web --rpc --grpc-gateway-host 0.0.0.0 --monitoring-host 0.0.0.0 --datadir /builder/validator --enable-tracing --graffiti "highbyte.eth" --wallet-dir /builder/validator_keys --wallet-password-file /builder/wallet.txt --accept-terms-of-use --suggested-fee-recipient 0x67eC90d8adc19933aFf5140eA45d4cc111150c6A
+
+[Install]
+WantedBy=multi-user.target

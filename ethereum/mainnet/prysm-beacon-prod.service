@@ -1,0 +1,13 @@
+[Unit]
+Description=ethereum consensus implementation written in go
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=5s
+User=validator
+ExecStart=/builder/prysm/prysm.sh beacon-chain --accept-terms-of-use --enable-debug-rpc-endpoints --http-mev-relay http://localhost:18550 --jwt-secret=/builder/prysm/jwt.hex --genesis-state=/builder/prysm/genesis.ssz --suggested-fee-recipient 0x67eC90d8adc19933aFf5140eA45d4cc111150c6A
+
+[Install]
+WantedBy=multi-user.target
+
