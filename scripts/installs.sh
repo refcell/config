@@ -53,3 +53,13 @@ docker-compose --version
 sudo add-apt-repository universe
 sudo apt install gnome-tweaks
 sudo apt install gnome-shell-extension-gsconnect
+
+# Vagrant
+sudo apt update && sudo apt upgrade
+sudo apt-get -y install gcc make linux-headers-$(uname -r) dkms
+sudo apt -y install virtualbox
+wget https://releases.hashicorp.com/vagrant/2.3.3/vagrant_2.3.3-1_amd64.deb
+sudo apt -y install ./vagrant_2.3.3-1_amd64.deb
+
+
+
