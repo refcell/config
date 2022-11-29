@@ -64,3 +64,7 @@ sudo apt -y install ./vagrant_2.3.3-1_amd64.deb
 # Fuse (for app images)
 sudo apt install libfuse2
 
+# MISC
+sudo apt install tree
+sudo apt-get install xsel # or xclip
+
