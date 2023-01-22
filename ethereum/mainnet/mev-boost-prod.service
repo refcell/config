@@ -8,7 +8,8 @@ RestartSec=5s
 User=octane
 Environment="BN_RELAY=https://0x9000009807ed12c1f08bf4e81c6da3ba8e3fc3d953898ce0102433094e5f22f21102ec057841fcb81978ed1ea0fa8246@builder-relay-mainnet.blocknative.com"
 Environment="FB_RELAY=https://0xac6e77dfe25ecd6110b8e780608cce0dab71fdd5ebea22a16c0205200f2f8e2e3ad3b71d3499c54ad14d6c21b41a37ae@boost-relay.flashbots.net"
-ExecStart=/usr/local/bin/mev-boost -relays $BN_RELAY,$FB_RELAY 
+Environment="US_RELAY=https://0xa1559ace749633b997cb3fdacffb890aeebdb0f5a3b6aaa7eeeaf1a38af0a8fe88b9e4b1f61f236d2e64d95733327a62@relay.ultrasound.money
+ExecStart=/usr/local/bin/mev-boost -relays $BN_RELAY,$FB_RELAY,$US_RELAY
 # ExecStart=/usr/local/bin/mev-boost -relays https://0x9000009807ed12c1f08bf4e81c6da3ba8e3fc3d953898ce0102433094e5f22f21102ec057841fcb81978ed1ea0fa8246@builder-relay-mainnet.blocknative.com,https://0xac6e77dfe25ecd6110b8e780608cce0dab71fdd5ebea22a16c0205200f2f8e2e3ad3b71d3499c54ad14d6c21b41a37ae@boost-relay.flashbots.net
 
 [Install]
